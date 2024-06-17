@@ -29,8 +29,10 @@
   <h2>Suggestions de produits :</h2>
 
   <div class="container">
-    @for (product of randomProducts; track product.id) {
+    @if(randomProducts.length >=  3) {
+      @for (product of randomProducts; track product.id) {
         <app-product-card  routerLink="/product/{{product.id}}" [id]="product.id"></app-product-card>
+    }
     }
 </div>
 

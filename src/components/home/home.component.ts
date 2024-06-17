@@ -34,13 +34,14 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.api.getProducts().subscribe((products) => {
       this.products = products;
-      this.index1 = Math.round(Math.random() * (products.length - 1));
+      if(products.length > 3) {
+        this.index1 = Math.round(Math.random() * (products.length - 1));
       do { this.index2 = Math.round(Math.random() * (products.length - 1)) }
       while (this.index1 == this.index2);
       do { this.index3 = Math.round(Math.random() * (products.length - 1)) }
       while ((this.index3 == this.index2) || (this.index3 == this.index1));
       this.randomProducts.push(products[this.index1], products[this.index2], products[this.index3]);
+      }
     })
   }
-
 }
