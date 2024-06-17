@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div>
+    <a routerLink="/products">Liste des produits</a>
+    <br>
+    <a routerLink="/categories">Liste des catégories</a>
+    <br>
+    <input [(ngModel)]="text" (keydown)="onKeydown($event)"><button type="submit" >Rechercher</button>
+    <app-search-results (searchedProductsChange)="onSharedVariableChange($event)"></app-search-results>
+<!--     <div class="searchBar">
+      
+       @for (product of products; track product.id) {
+        <ul>
+          <li>
+              <span>{{product.name}}</span>
+          </li>
+      </ul>
+    }
+  </div> -->
+
+    <router-outlet></router-outlet>
+    
+  </div>
+
+</body>
+
+</html>
