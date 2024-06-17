@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
   text: string = "";
   private api = inject(ApiService);
 
-
   router = inject(Router)
   onSubmit() {
     this.router.navigateByUrl(("/search-results/" + this.text));

@@ -14,8 +14,6 @@ import { SearchResultsComponent } from '../components/search-results/search-resu
 })
 export class AppComponent implements OnInit {
 
-
-
   title = 'app-boutique';
 
   text: string = "";

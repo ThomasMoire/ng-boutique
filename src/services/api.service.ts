@@ -11,12 +11,6 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  /*   public async getProducts() : Promise<Product[]>{
-      // Ma fonction asyncrone renvoie une promesse de Product[]
-      return fetch("http://localhost:8066/products")
-      .then(res=>res.json());
-    } */
-
   public getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>("http://localhost:8066/products");
   }
@@ -24,10 +18,6 @@ export class ApiService {
   public getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>("http://localhost:8066/categories");
   }
-
-/*   public getProductById(id : number | string): Observable<Product> {
-    return this.http.get<Product>("http://localhost:8066/product/1");
-  } */
 
   public async getProductById(id : number) : Promise<Product> {
     return fetch("http://localhost:8066/product/" + id)

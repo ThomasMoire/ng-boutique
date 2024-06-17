@@ -23,17 +23,7 @@ export class ProductsListComponent implements OnInit {
     this.api.getProducts().subscribe((products) => {
       this.products = products
     })
-  }
-  
+  } 
 }
-
-  /*     // ngOnInit est appelée par Angular une fois à l'initialisation du composant
-    ngOnInit(): void {
-  
-      this.api.getProducts().then(products=>{
-          // Je fetch tout mes products et les place dans l'état products.
-          this.products = products
-      });
-    } */
 
 
