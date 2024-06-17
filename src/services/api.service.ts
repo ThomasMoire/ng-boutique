@@ -34,9 +34,22 @@ export class ApiService {
     .then(res=>res.json());
   }
 
+  public async getCategoryById(id: number) : Promise<Category> {
+    return fetch("http://localhost:8066/category/" + id)
+    .then(res=>res.json());
+  }
+
+  public getProductsByCategory(categoryId: number): Observable<Product[]> {
+    return this.http.get<Product[]>("http://localhost:8066/products/category/" + categoryId);
+  }
+
   private searchUrl = 'http://localhost:8066/products/search';
-  searchProducts(text: string): Observable<any> {
+  public searchProducts(text: string): Observable<any> {
     return this.http.get<any>(`${this.searchUrl}/${text}`);
+  }
+
+  public addProduct(product: Product) : Observable<Product> {
+    return this.http.post<Product>("http://localhost:8066/product", product);
   }
   
 

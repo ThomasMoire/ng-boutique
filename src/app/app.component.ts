@@ -14,29 +14,21 @@ import { SearchResultsComponent } from '../components/search-results/search-resu
 })
 export class AppComponent implements OnInit {
 
-  constructor(private api: ApiService) { }
+
 
   title = 'app-boutique';
 
   text: string = "";
-  searchedProducts: Product[] = [];
 
-
-  ngOnInit(): void {
-    if (this.text) {
-      this.api.searchProducts(this.text).subscribe((searchedProducts) => {
-        this.searchedProducts = searchedProducts
-      })
-    }
-  }
-
-  onSharedVariableChange(newValue: any) {
-    this.searchedProducts = newValue;
-  }
 
   router = inject(Router)
-  onKeydown(event: any){
-    this.router.navigateByUrl("/search-results");
+  onSubmit(){
+    this.router.navigateByUrl(("/search-results/"+this.text));
+}
+
+
+ngOnInit() {
+  document.body.style.backgroundColor = '#fdf8e5';
 }
 
 }

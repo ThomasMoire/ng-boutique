@@ -1,0 +1,33 @@
+<h1>Bienvenue sur votre page admin</h1>
+
+<a routerLink="/product/post"><button>Ajouter un nouveau produit</button></a>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<h2>Tous les produits référencés :</h2>
+
+<div class="container">
+        @for (product of products; track product.id) {
+            <div class="card">
+                @if (product) {
+                <h2> {{product.name}} </h2>
+        
+                <p> {{product.price}} € </p>
+        
+                <h3> {{product.description}} </h3>
+
+                <div>
+                    <a routerLink="/product/update" [id]="product.id"><button>Modifier</button></a>
+                    <button>Supprimer</button>
+                </div>
+        
+                }
+            </div>
+        }
+    </div>

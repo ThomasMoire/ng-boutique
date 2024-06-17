@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { Category } from '../../utils/interfaces/Category';
+import { CategoryProductsComponent } from '../category-products/category-products.component';
 
 @Component({
   selector: 'app-categories-list',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink,CategoryProductsComponent],
   templateUrl: './categories-list.component.html',
   styleUrl: './categories-list.component.css'
 })
