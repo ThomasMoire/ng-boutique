@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   onSubmit() {
     this.router.navigateByUrl(("/search-results/" + this.text));
   }
-
+  
   products: Product[] = [];
   randomProducts: Product[] = [];
 

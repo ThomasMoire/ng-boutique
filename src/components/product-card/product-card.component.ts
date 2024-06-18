@@ -15,10 +15,12 @@ export class ProductCardComponent {
   constructor(private api: ApiService) { }
 
   product : Product | null = null;
-
-
+  
   @Input() set id(productId : number){
-    this.api.getProductById(productId).then(product=>this.product = product)
+    this.api.getProductById(productId)
+    .then(product=>{
+      this.product = product;
+    })
     .catch(error=>console.log(error));
   }
 

@@ -3,6 +3,7 @@ import { Product } from '../utils/interfaces/Product';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Category } from '../utils/interfaces/Category';
+import { authGuard } from '../app/auth.guard';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,8 @@ export class ApiService {
     return fetch("http://localhost:8066/product/" + id)
     .then(res=>res.json());
   }
+  
+  
 
   public async getCategoryById(id: number) : Promise<Category> {
     return fetch("http://localhost:8066/category/" + id)
