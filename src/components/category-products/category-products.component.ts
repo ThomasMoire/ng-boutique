@@ -29,5 +29,4 @@ export class CategoryProductsComponent implements OnInit {
       this.products = products;
     })
   }
-
 }

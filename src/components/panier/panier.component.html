@@ -1,1 +1,33 @@
-<p>panier works!</p>
+<div class="panier">
+  <h2>Panier</h2>
+
+  <form [formGroup]="panierForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="productId">ID du Produit:</label>
+      <input id="productId" formControlName="productId" type="number">
+      <div *ngIf="panierForm.get('productId')?.invalid && panierForm.get('productId')?.touched">
+        L'ID du produit est requis.
+      </div>
+    </div>
+
+    <div>
+      <label for="quantity">Quantité:</label>
+      <input id="quantity" formControlName="quantity" type="number" min="1">
+      <div *ngIf="panierForm.get('quantity')?.invalid && panierForm.get('quantity')?.touched">
+        La quantité doit être au moins 1.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="panierForm.invalid">Ajouter au panier</button>
+  </form>
+
+  <div class="panier-items">
+    <h3>Produits dans le panier</h3>
+    <ul>
+      <li *ngFor="let product of products">
+        {{ product.name }} - Prix : {{ product.price }} €
+        <button (click)="removeProduct(product)">Supprimer</button>
+      </li>
+    </ul>
+  </div>
+</div>

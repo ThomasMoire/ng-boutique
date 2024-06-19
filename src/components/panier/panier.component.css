@@ -1,0 +1,17 @@
+.cart {
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .cart form {
+    margin-bottom: 20px;
+  }
+  
+  .cart-items {
+    margin-top: 20px;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
