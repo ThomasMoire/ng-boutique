@@ -11,7 +11,7 @@ import { AsyncPipe } from '@angular/common';
   selector: 'app-home',
   standalone: true,
   imports: [RouterLink, RouterOutlet, FormsModule, SearchResultsComponent, ProductCardComponent, AsyncPipe],
-  templateUrl: './home.component.html',
+  templateUrl:'./home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {

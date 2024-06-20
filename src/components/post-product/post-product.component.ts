@@ -19,14 +19,16 @@ export class PostProductComponent {
     id: 0,
     price: 0,
     description: "",
-    categoryId: 0
+    CategoryId: 0,
+    Categorytitle: ""
   }
 
   productGroup = new FormGroup({
     name : new FormControl<string>(""),
     price : new FormControl<number>(0),
     description : new FormControl<string>(""),
-    categoryId : new FormControl<number>(0)
+    CategoryId : new FormControl<string>(""),
+    Categorytitle : new FormControl<string>("")
   });
 
   onSubmit(){
@@ -35,7 +37,7 @@ export class PostProductComponent {
       this.product.name = String(this.productGroup.value.name);
       this.product.price = Number(this.productGroup.value.price);
       this.product.description = String(this.productGroup.value.description);
-      this.product.categoryId = Number(this.productGroup.value.categoryId);
+      this.product.CategoryId = Number(this.productGroup.value.CategoryId);
 
       this.api.addProduct(this.product).subscribe(response=>{
       console.log("produit ajoutée"+ response);

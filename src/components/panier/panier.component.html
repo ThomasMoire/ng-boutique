@@ -25,7 +25,7 @@
     <h3>Produits dans le panier</h3>
     <ul>
       <li *ngFor="let product of products">
-        {{ product.name }} - Prix : {{ product.price }} €
+        {{ product.name }} - Quantité: {{ product.quantity }}
         <button (click)="removeProduct(product)">Supprimer</button>
       </li>
     </ul>

@@ -12,12 +12,12 @@ export class PanierService {
     return of(this.panier);
   }
 
-  addToPanier(product: Product): Observable<void> {
+  addToPanier(product: Product & { quantity: number }): Observable<void> {
     const existingProduct = this.panier.find(p => p.id === product.id);
     if (existingProduct) {
-      existingProduct.price += product.price;
+      existingProduct.quantity = (existingProduct.quantity || 0) + product.quantity;
     } else {
-      this.panier.push(product);
+      this.panier.push({ ...product, quantity: product.quantity });
     }
     return of();
   }

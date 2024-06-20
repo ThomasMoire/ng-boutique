@@ -14,8 +14,11 @@
   <div class="container">
     @if(randomProducts.length >=  3) {
       @for (product of randomProducts; track product.id) {
-        <app-product-card  routerLink="/product/{{product.id}}" [id]="product.id"></app-product-card>
-    }
+        <app-product-card  routerLink="/product/{{product.id}}"
+        [id]="product.id">
+      </app-product-card>
+      
+      }
     }
 </div>
 

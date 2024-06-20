@@ -1,9 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-PanierService
+import { PanierService } from '../../services/panier.service';
 import { Product } from '../../utils/interfaces/Product';
 import { CommonModule } from '@angular/common';
-import { PanierService } from '../../services/panier.service';
 
 @Component({
   selector: 'app-panier',
@@ -12,7 +11,6 @@ import { PanierService } from '../../services/panier.service';
   templateUrl: './panier.component.html',
   styleUrls: ['./panier.component.css']
 })
-
 export class PanierComponent implements OnInit {
   panierForm!: FormGroup;
   products: Product[] = [];
@@ -39,11 +37,11 @@ export class PanierComponent implements OnInit {
     if (this.panierForm.valid) {
       const productId = this.panierForm.get('productId')?.value;
       const quantity = this.panierForm.get('quantity')?.value;
-      // this.panierService.addToPanier({ id: productId }).subscribe(() => {
+      this.panierService.addToPanier({ id: productId, quantity } as Product & { quantity: number }).subscribe(() => {
         this.loadPanier();
-      };
+      });
     }
-  
+  }
 
   removeProduct(product: Product): void {
     this.panierService.removeFromPanier(product).subscribe(() => {
