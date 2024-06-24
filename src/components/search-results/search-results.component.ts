@@ -2,7 +2,7 @@ import { Component, Input, inject } from '@angular/core';
 import { AppComponent } from '../../app/app.component';
 import { RouterLink } from '@angular/router';
 import { Product } from '../../utils/interfaces/Product';
-import { ApiService } from '../../services/api.service';
+import { ApiService } from '../../services/API/api.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({

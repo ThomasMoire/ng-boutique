@@ -1,3 +1,5 @@
+import { Category } from "./Category";
+
 export interface Product {
     [x: string]: any;
     id: number;

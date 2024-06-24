@@ -10,7 +10,7 @@ import { CGUComponent } from '../components/cgu/cgu.component';
 import { CategoryProductsComponent } from '../components/category-products/category-products.component';
 import { PostProductComponent } from '../components/post-product/post-product.component';
 import { UpdateProductComponent } from '../components/update-product/update-product.component';
-import { authGuard } from './auth.guard';
+import { authGuard } from '../services/Guard/auth.guard';
 
 export const routes: Routes = [
     {path : "products",component:ProductsListComponent},
@@ -21,7 +21,8 @@ export const routes: Routes = [
     {path : "search-results/:text",component:SearchResultsComponent},
     {path : "home",component:HomeComponent},
     {path : "cart",component:PanierComponent},
-    {path : "admin",component:AdminComponent, canActivate: [authGuard]},
+    {path : "admin",component:AdminComponent},
+    // , canActivate: [authGuard]
     {path : "CGU",component:CGUComponent},
     {path : "products/category/:categoryId",component:CategoryProductsComponent}
 ];

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../utils/interfaces/Product';
+import { Product } from '../../utils/interfaces/Product';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Category } from '../utils/interfaces/Category';
-import { authGuard } from '../app/auth.guard';
+import { Category } from '../../utils/interfaces/Category';
+import { authGuard } from '../Guard/auth.guard';
 
 @Injectable({
   providedIn: 'root'

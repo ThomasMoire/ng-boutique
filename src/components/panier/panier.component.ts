@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { PanierService } from '../../services/panier.service';
+import { PanierService } from '../../services/Panier/panier.service';
 import { Product } from '../../utils/interfaces/Product';
 import { CommonModule } from '@angular/common';
 

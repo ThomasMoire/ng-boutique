@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
-import { ApiService } from '../../services/api.service';
+import { ApiService } from '../../services/API/api.service';
 import { Category } from '../../utils/interfaces/Category';
 import { Product } from '../../utils/interfaces/Product';
 import { RouterLink, RouterOutlet } from '@angular/router';

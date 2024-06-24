@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Product } from '../../utils/interfaces/Product';
-import { ApiService } from '../../services/api.service';
+import { ApiService } from '../../services/API/api.service';
 
 @Component({
   selector: 'app-post-product',
@@ -20,7 +20,7 @@ export class PostProductComponent {
     price: 0,
     description: "",
     CategoryId: 0,
-    Categorytitle: ""
+    Categorytitle: "",
   }
 
   productGroup = new FormGroup({
@@ -38,6 +38,7 @@ export class PostProductComponent {
       this.product.price = Number(this.productGroup.value.price);
       this.product.description = String(this.productGroup.value.description);
       this.product.CategoryId = Number(this.productGroup.value.CategoryId);
+      this.product.Categorytitle = String(this.productGroup.value.Categorytitle);
 
       this.api.addProduct(this.product).subscribe(response=>{
       console.log("produit ajoutée"+ response);

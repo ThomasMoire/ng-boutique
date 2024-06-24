@@ -14,7 +14,8 @@
             
             @if (product) {
 
-            {{product.Categorytitle}}
+            <h1>{{product['Category'].title}}</h1>
+
             <h2> {{product.name}} </h2>
             
             <p> {{product.price}} € </p>

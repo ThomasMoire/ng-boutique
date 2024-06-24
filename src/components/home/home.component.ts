@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { SearchResultsComponent } from '../search-results/search-results.component';
 import { Product } from '../../utils/interfaces/Product';
-import { ApiService } from '../../services/api.service';
+import { ApiService } from '../../services/API/api.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { AsyncPipe } from '@angular/common';
 
